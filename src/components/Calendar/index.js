@@ -235,9 +235,15 @@ class Calendar extends PureComponent {
             </span>
           </span>
         ) : (
-          <span className={styles.monthAndYearPickers}>
-            {this.state.monthNames[focusedDate.getMonth()]} {focusedDate.getFullYear()}
-          </span>
+          <>
+            <span className={styles.monthName}>
+              {this.state.monthNames[focusedDate.getMonth()]} {focusedDate.getFullYear()}
+            </span>
+            <span className={styles.monthName}>
+              {const nextMonth = addMonths(focusedDate, 1)}
+              {this.state.monthNames[focusedDate.getMonth()]} {focusedDate.getFullYear()}
+            </span>
+          </>
         )}
         {showMonthArrow ? (
           <button
@@ -478,7 +484,7 @@ class Calendar extends PureComponent {
                           ? { height: this.estimateMonthSize(index) }
                           : { height: scrollArea.monthHeight, width: this.estimateMonthSize(index) }
                       }
-                      showMonthName
+                      showMonthName={false}
                       showWeekDays={!isVertical}
                     />
                   );
