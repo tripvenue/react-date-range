@@ -520,7 +520,7 @@ class Calendar extends PureComponent {
                   onMouseLeave={() => onPreviewChange && onPreviewChange()}
                   styles={this.styles}
                   showWeekDays={!isVertical || i === 0}
-                  showMonthName={!isVertical || i > 0}
+                  showMonthName={false}
                 />
               );
             })}
