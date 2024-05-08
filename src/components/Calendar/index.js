@@ -240,8 +240,7 @@ class Calendar extends PureComponent {
               {this.state.monthNames[focusedDate.getMonth()]} {focusedDate.getFullYear()}
             </span>
             <span className={styles.monthName}>
-              {const nextMonth = addMonths(focusedDate, 1)}
-              {this.state.monthNames[focusedDate.getMonth()]} {focusedDate.getFullYear()}
+              {this.state.monthNames[addMonths(focusedDate, 1).getMonth()]} {addMonths(focusedDate, 1).getFullYear()}
             </span>
           </>
         )}
