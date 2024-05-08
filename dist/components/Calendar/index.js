@@ -171,11 +171,9 @@ class Calendar extends _react.PureComponent {
           key: year,
           value: year
         }, year);
-      })))) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("span", {
-        className: styles.monthName
-      }, this.state.monthNames[focusedDate.getMonth()], " ", focusedDate.getFullYear()), /*#__PURE__*/_react.default.createElement("span", {
-        className: styles.monthName
-      }, this.state.monthNames[(0, _dateFns.addMonths)(focusedDate, 1).getMonth()], " ", (0, _dateFns.addMonths)(focusedDate, 1).getFullYear())), showMonthArrow ? /*#__PURE__*/_react.default.createElement("button", {
+      })))) : /*#__PURE__*/_react.default.createElement("span", {
+        className: styles.monthAndYearPickers
+      }, this.state.monthNames[focusedDate.getMonth()], " ", focusedDate.getFullYear()), showMonthArrow ? /*#__PURE__*/_react.default.createElement("button", {
         type: "button",
         className: (0, _classnames.default)(styles.nextPrevButton, styles.nextButton),
         onClick: () => changeShownDate(+1, 'monthOffset'),
@@ -499,7 +497,7 @@ class Calendar extends _react.PureComponent {
             height: scrollArea.monthHeight,
             width: this.estimateMonthSize(index)
           },
-          showMonthName: false,
+          showMonthName: true,
           showWeekDays: !isVertical
         }));
       }
@@ -526,7 +524,7 @@ class Calendar extends _react.PureComponent {
         onMouseLeave: () => onPreviewChange && onPreviewChange(),
         styles: this.styles,
         showWeekDays: !isVertical || i === 0,
-        showMonthName: false
+        showMonthName: !isVertical || i > 0
       }));
     })));
   }
