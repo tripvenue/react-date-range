@@ -194,7 +194,7 @@ class DayCell extends _react.Component {
       }
     }), this.renderSelectionPlaceholders(), this.renderPreviewPlaceholder(), /*#__PURE__*/_react.default.createElement("span", {
       className: this.props.styles.dayNumber
-    }, dayContentRenderer?.(this.props.day) || /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(this.props.day, this.props.dayDisplayFormat))));
+    }, dayContentRenderer?.(this.props.day, this.props.month) || /*#__PURE__*/_react.default.createElement("span", null, (0, _dateFns.format)(this.props.day, this.props.dayDisplayFormat))));
   }
 }
 DayCell.defaultProps = {};
@@ -209,6 +209,7 @@ const rangeShape = exports.rangeShape = _propTypes.default.shape({
 });
 DayCell.propTypes = {
   day: _propTypes.default.object.isRequired,
+  month: _propTypes.default.object.isRequired,
   dayDisplayFormat: _propTypes.default.string,
   date: _propTypes.default.object,
   ranges: _propTypes.default.arrayOf(rangeShape),
